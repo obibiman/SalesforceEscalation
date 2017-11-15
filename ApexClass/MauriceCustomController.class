@@ -1,12 +1,13 @@
 public class MauriceCustomController {
+public class MauriceCustomController {
 public Account acct {get;set;}
+
 public MauriceCustomController() {
-String acctId = ApexPages.currentPage().getParameters().
-get('id');
-acct = [Select Rating From Account Where Id = :acctId];
+String acctId = ApexPages.currentPage().getParameters().get('id');
+    acct = [Select Rating From Account Where Id = :acctId];
 }
 public PageReference save() {
-update acct;
-return new PageReference('/'' + acct.Id);
-}
+    update acct;
+    return new PageReference('/'' + acct.Id);
+    }
 }
